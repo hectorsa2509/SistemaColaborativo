@@ -7,8 +7,6 @@ apellido_paterno VARCHAR(120),
 apellido_materno VARCHAR(120),
 correo VARCHAR(90),
 foto BYTEA,
-telefono VARCHAR (50),
-sexo VARCHAR(90),
 contrasenia VARCHAR(90),
 rol varchar(25) null,
 codigo_activacion VARCHAR(30),
@@ -56,38 +54,11 @@ FOREIGN KEY (fk_id_profesor)
 	ON DELETE CASCADE
 );
 
-CREATE TABLE Experiencia(
-pk_id_experiencia SERIAL NOT NULL  PRIMARY KEY,
-fk_id_cv SERIAL,
-fecha_inicio DATE,
-fecha_fin DATE,
-empresa VARCHAR(90),
-funcion_trabajo VARCHAR(200),
-tarea_trabajo VARCHAR(200),
-FOREIGN KEY (fk_id_cv) 
-	REFERENCES Curriculum(pk_id_cv)
-	ON DELETE CASCADE
-);
-
 CREATE TABLE Estudios(
 pk_id_estudios SERIAL NOT NULL  PRIMARY KEY,
 fk_id_cv SERIAL,
 estudio VARCHAR(90),
-fecha_inicio DATE,
-fecha_fin DATE,
 universidad VARCHAR(120),
-FOREIGN KEY (fk_id_cv) 
-	REFERENCES Curriculum(pk_id_cv)
-	ON DELETE CASCADE
-);
-CREATE TABLE Complementarios(
-pk_id_complementarios SERIAL NOT NULL  PRIMARY KEY,
-fk_id_cv SERIAL,
-estudio VARCHAR(90),
-fecha_inicio DATE,
-fecha_fin DATE,
-centro VARCHAR(90),
-lugar VARCHAR(90),
 FOREIGN KEY (fk_id_cv) 
 	REFERENCES Curriculum(pk_id_cv)
 	ON DELETE CASCADE

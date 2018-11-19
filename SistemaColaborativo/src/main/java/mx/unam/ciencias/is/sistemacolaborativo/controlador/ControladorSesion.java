@@ -69,7 +69,7 @@ public class ControladorSesion {
         Usuario usuario = usuario_db.getUsuario(u);
         model.addAttribute("username", u);
         model.addAttribute("nombre", usuario.getNombre());
-        return new ModelAndView("indexusuario", model);
+        return new ModelAndView("vistaalumno/indexusuario", model);
 
     }
 
@@ -79,10 +79,16 @@ public class ControladorSesion {
         Usuario usuario = usuario_db.getUsuario(u);
         model.addAttribute("username", u);
         model.addAttribute("nombre", usuario.getNombre());
-        return new ModelAndView("inicioProfesor", model);
+        model.addAttribute("apellidoP", usuario.getApellido_p());
+        model.addAttribute("apellidoM", usuario.getApellido_m());
+        model.addAttribute("correo", usuario.getCorreo());
+        return new ModelAndView("vistaprofesor/inicioProfesor", model);
 
     }
-
+    @RequestMapping(value = "/pago", method = RequestMethod.GET)
+    public ModelAndView pago(HttpServletRequest request, ModelMap model, Principal principal) {
+        return new ModelAndView("pago", model);
+    }
     @RequestMapping(value = "/error403", method = RequestMethod.GET)
     public String error403() {
         return "error403";

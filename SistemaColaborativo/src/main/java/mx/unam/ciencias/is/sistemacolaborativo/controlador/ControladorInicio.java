@@ -37,6 +37,11 @@ public class ControladorInicio {
         return "opcion";
 
     }
+        @RequestMapping(value = "/informacion", method = RequestMethod.GET)
+    public String info() {
+        return "informacion";
+
+    }
 
     @RequestMapping(value = "/loggea", method = RequestMethod.GET)
     public String login() {

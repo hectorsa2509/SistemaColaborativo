@@ -13,11 +13,10 @@
             <div class="row text-center">
                 <div class="col-md-12">
                     <h3  style="color: #51d88a">Asesorias por nivel educativo</h3>
-               
                 </div>
             </div>
-                <div class="row pt-4">
-                     <c:forEach items="${niveles}" var="nivel">
+            <div class="row pt-4">
+                <c:forEach items="${niveles}" var="nivel">
                     <div class="col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="https://proyectoeducere.files.wordpress.com/2016/11/pe2.png?w=480" alt=" ">
@@ -27,10 +26,8 @@
                             </div>
                         </div>
                     </div>
-                     </c:forEach>
-                </div>
+                </c:forEach>
             </div>
+        </div>
     </section>
-
-
-<%@include file='footer.jsp'%>
+ <%@include file='footer.jsp'%>

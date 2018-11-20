@@ -104,4 +104,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 </body>
 </html>
+<style>
+    footer{
+        text-align: center;
+    }
+</style>
 <%@include file='footer.jsp'%>

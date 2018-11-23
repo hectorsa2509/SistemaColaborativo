@@ -64,7 +64,7 @@ public class ControladorProfesor {
             usuario.setContrasenia(hashedPassword);
             String ca = obtenerCadenaAleatoria();
             usuario.setCodigo_activacion(ca);
-            usuario.setActivado(true);
+            //usuario.setActivado(true);
             if (!file.isEmpty()) {
                 usuario.setFoto(file.getBytes());
             }
@@ -73,8 +73,8 @@ public class ControladorProfesor {
             Profesor p = new Profesor();
             p.setUsuario(usuario);
             profesor_bd.guardar(p);
-            //CorreoActivacion caa = new CorreoActivacion();
-            //caa.CorreoActivacion(request, usuario);
+            CorreoActivacion caa = new CorreoActivacion();
+            caa.CorreoActivacion(request, usuario);
         } catch (Exception e) {
             System.out.println(e);
         }

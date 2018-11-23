@@ -28,7 +28,7 @@ Author     : hectorsama, luis
         </form>
     </div>
 <hgroup>
-  <h1>Bienvenido</h1>
+  <!--h1>Bienvenido</h1>
 </hgroup>
                 <div class="login">
                  <form action="${pageContext.request.contextPath}/login" method="POST" class="login-form">
@@ -44,6 +44,6 @@ Author     : hectorsama, luis
               <button class="btn btn-primary tn-lg btn-block" id="Login" type="" style="width: 100%">       Login        </button>
               <!--<p class="submit"><input type="submit" name="commit" value="Login"></p>-->
 
-            </form>
-              </div>
+            <!--/form>
+              </div-->
 </html>

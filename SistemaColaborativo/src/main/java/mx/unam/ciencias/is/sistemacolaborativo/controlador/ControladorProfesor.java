@@ -64,6 +64,7 @@ public class ControladorProfesor {
             usuario.setContrasenia(hashedPassword);
             String ca = obtenerCadenaAleatoria();
             usuario.setCodigo_activacion(ca);
+            usuario.setActivado(true);
             if (!file.isEmpty()) {
                 usuario.setFoto(file.getBytes());
             }
@@ -72,8 +73,8 @@ public class ControladorProfesor {
             Profesor p = new Profesor();
             p.setUsuario(usuario);
             profesor_bd.guardar(p);
-            CorreoActivacion caa = new CorreoActivacion();
-            caa.CorreoActivacion(request, usuario);
+            //CorreoActivacion caa = new CorreoActivacion();
+            //caa.CorreoActivacion(request, usuario);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -125,7 +126,7 @@ public class ControladorProfesor {
     }
 
     @RequestMapping(value = "/profesor/guardacv", method = RequestMethod.POST)
-    public ModelAndView guardaCV(HttpServletRequest request, ModelMap model, Principal principal, @RequestParam("file") MultipartFile file) throws IOException {
+    public ModelAndView guardaCV(HttpServletRequest request, ModelMap model, Principal principal, @RequestParam("boton") MultipartFile file) throws IOException {
         Usuario usuario = usuario_bd.getUsuario(principal.getName());
         Profesor p = profesor_bd.getProfesor(usuario);
         p.setCosto_x_hora(request.getParameter("costo"));

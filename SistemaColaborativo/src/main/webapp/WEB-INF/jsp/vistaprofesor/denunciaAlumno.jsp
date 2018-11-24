@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <jsp:include page='headerProfesores.jsp'>
     <jsp:param name="title" value="Denuncia alumno"/>
@@ -25,13 +26,30 @@
             </span>
         </div>
         <form method="POST" enctype="multipart/form-data"action="${pageContext.request.contextPath}/profesor/realizaDenunciaP">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-left:10px">
-                <input class="mdl-textfield__input" type="text" id="costo" value="${nombreDenunciado}" readonly>
-                <label class="mdl-textfield__label" >Alumno</label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">    
+                <c:choose>
+                    <c:when test="${opt}">
+                        <input class="mdl-textfield__input" type="text" value="${nombre_c}" readonly>
+                        <label class="mdl-textfield__label" >Usuario</label>
+                    </c:when>
+                    <c:otherwise>
+                        <input class="mdl-textfield__input" type="text" value="${nombreDenunciado}" readonly>
+                        <label class="mdl-textfield__label" >Alumno</label>
+                    </c:otherwise>
+                </c:choose>
+
             </div>
-            <input type="hidden" id ="ida" value="${idDenunciado}">
+            <c:choose>
+                <c:when test="${opt}">
+                    <input type="hidden" name ="ida" value="${id_buscado}">
+                </c:when>
+                <c:otherwise>
+                    <input type="hidden" name ="ida" value="${idDenunciado}">
+                </c:otherwise>
+            </c:choose>
+            <input type="hidden" name="opt" value="${opt}">
             <div class = "mdl-textfield mdl-js-textfield" style="padding-left:10px">  
-                <textarea class="mdl-textfield_input" id ="exp" >
+                <textarea class="mdl-textfield_input" name ="exp" >
                 </textarea>
                 <label class="mdl-textfield__label">Explicanos tu situación: </label>
             </div>

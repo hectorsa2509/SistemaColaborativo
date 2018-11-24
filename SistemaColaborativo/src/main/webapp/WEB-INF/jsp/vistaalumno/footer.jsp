@@ -5,6 +5,7 @@
                     </div>
 
                     <div class="mdl-mega-footer--bottom-section">
+                        <a class="android-link mdl-typography--font-light" href="${pageContext.request.contextPath}/alumno/denunciarA">Reportar abuso</a>
                         <a class="android-link mdl-typography--font-light" href="">Políticas de Privacidad</a>
                     </div>
 

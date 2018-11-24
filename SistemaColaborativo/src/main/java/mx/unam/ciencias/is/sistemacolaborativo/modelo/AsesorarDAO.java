@@ -158,7 +158,7 @@ public class AsesorarDAO {
         Transaction tx = null;
         try {
             tx = s.beginTransaction();
-            String hql = "FROM Asesorar WHERE fk_id_profesor = :fk_id_profesor AND fk_id_alumno = fk_id_alumno";
+            String hql = "FROM Asesorar WHERE fk_id_profesor=:fk_id_profesor AND fk_id_alumno=:fk_id_alumno";
             Query query = s.createQuery(hql);
             query.setParameter("fk_id_profesor", p);
             query.setParameter("fk_id_alumno", a);

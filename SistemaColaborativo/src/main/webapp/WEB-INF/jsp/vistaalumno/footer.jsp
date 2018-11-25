@@ -9,6 +9,7 @@
         <p class="mdl-typography--font-light">Software en desarrollo.</p>
     </div>
 
+<<<<<<< HEAD
     <div class="mdl-mega-footer--bottom-section">
         <a class="android-link mdl-typography--font-light" href="">Políticas de Privacidad</a>
     </div>
@@ -46,3 +47,22 @@
 </script>
 </body>
 </html>
+=======
+                    <div class="mdl-mega-footer--bottom-section">
+                        <a class="android-link mdl-typography--font-light" href="${pageContext.request.contextPath}/alumno/denunciarA">Reportar abuso</a>
+                        <a class="android-link mdl-typography--font-light" href="">Políticas de Privacidad</a>
+                    </div>
+
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script>
+
+document.getElementById("boton").onchange = function () {
+    document.getElementById("file").value = this.files[0].name;
+};
+        </script>
+    </body>
+</html>
+>>>>>>> a34c3185b025e1b5fce31e9e6d8a2ff768a4e74c
